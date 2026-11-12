@@ -1,0 +1,69 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("First number: ");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Operator (+, -, *, /): ");
+        char op = Console.ReadKey().KeyChar;
+        Console.WriteLine();
+
+        Console.Write("Second number: ");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+
+        if (op == '+')
+        {
+            Addition(num1, num2);
+        }
+        else if (op == '-')
+        {
+            Subtraction(num1, num2);
+        }
+        else if (op == '*')
+        {
+            Multiplication(num1, num2);
+        }
+        else if (op == '/')
+        {
+            Division(num1, num2);
+        }
+        else
+        {
+            Console.WriteLine("Invalid operator.");
+        }
+    }
+
+    public static void Addition(double a, double b)
+    {
+        double c = a + b;
+        Console.WriteLine("The answer is: " + c);
+    }
+
+    public static void Subtraction(double a, double b)
+    {
+        double c = a - b;
+        Console.WriteLine("The answer is: " + c);
+    }
+
+    public static void Multiplication(double a, double b)
+    {
+        double c = a * b;
+        Console.WriteLine("The answer is: " + c);
+    }
+
+    public static void Division(double a, double b)
+    {
+        if (b != 0)
+        {
+            double c = a / b;
+            Console.WriteLine("The answer is: " + c);
+        }
+        else
+        {
+            Console.WriteLine("Cannot divide by zero.");
+        }
+    }
+}
